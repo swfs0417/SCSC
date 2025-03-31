@@ -1,0 +1,1 @@
+{"name":"Local: temp","url":"g:\\내 드라이브\\학교\\SCSC\\PS basic\\temp.py","tests":[{"id":1743411364328,"input":"5\n5\n4\n3\n2\n1","output":"1\n2\n3\n4\n5"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"g:\\내 드라이브\\학교\\SCSC\\PS basic\\temp.py","group":"local","local":true}
