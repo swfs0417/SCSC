@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action="">
+    <fieldset>
+      <legend>로그인</legend>
+      <div>
+        <label for="id">아이디</label>
+        <input type="text" id="id">
+      </div>
+      <div>
+        <label for="password">
+          비밀번호
+          <input type="password">
+        </label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>유효성 체크</legend>
+      <label for="email">이메일</label>
+      <input type="email" id="email">
+      <label for="url">인터넷 주소</label>
+      <input type="url" id="url">
+    </fieldset>
+    <fieldset>
+      <legend>숫자 관련</legend>
+      <ul>
+        <li><label for="tel">전화번호<input type="tel" id="tel"></label></li>
+        <li><label for="num">숫자<input type="number" id="num" min="3" max="15"></label></li>
+        <li>
+          <label for="range">범위<input type="range" id="range"min="3" max="5"></label>
+        </li>
+      </ul>
+    </fieldset>
+    <fieldset>
+      <legend>날짜 관련</legend>
+      <ul>
+        <li><label for="date">날짜<input type="date" id="date" min="2025-04-03" max="2025-04-07"></label></li>
+        <li><label for="month">월<input type="month" id="month"></label></li>
+        <li><label for="week">주<input type="week"></label></li>
+      </ul>
+    </fieldset>
+    <fieldset>
+      <legend>time</legend>
+      <label for="time">시간<input type="time"></label>
+    </fieldset>
+    <fieldset>
+      <legend>extra</legend>
+      <ul>
+        <li><label for="file">file<input type="file"></label></li>
+        <li><label for="hidden">hidden <input type="hidden" name="" id=""></label></li>
+      </ul>
+    </fieldset>
+    <input type="submit" value="제출하기">
+  </form>
+</body>
+</html>

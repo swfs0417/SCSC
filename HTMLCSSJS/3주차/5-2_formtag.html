@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action="">
+    <fieldset>
+      <legend>좋아하는 과일</legend>
+      <ul>
+        <li><label for="apple">사과<input type="checkbox" value="apple" id="apple"></label></li>
+        <li><label for="pear">배<input type="checkbox" value="pear" id="pear"></label></li>
+        <li><label for="grape">포도<input type="checkbox" value="grape" id="grape"></label></li>
+      </ul>
+    </fieldset>
+    <fieldset>
+      <legend>가장 좋아하는 색깔</legend>
+      <ul>
+        <li><label for="red">red <input type="radio" name="color" id="red" value="red"></label></li>
+        <li><label for="blue">blue <input type="radio" name="color" id="blue" value="blue"></label></li>
+        <li><label for="yellow">yellow <input type="radio" name="color" id="yellow" value="yellow"></label></li>
+        <li><label for="green">green <input type="radio" name="color" id="green" value="green"></label></li>
+      </ul>
+    </fieldset>
+    <fieldset>
+      <legend>자기소개서</legend>
+      <textarea name="" id="" cols="40" rows="10"></textarea>
+    </fieldset>
+    <fieldset>
+      <legend>select</legend>
+      <select name="매장/포장" id="매장/포장">
+        <option value="매장">매장</option>
+        <option value="포장">포장</option>
+        <option value="." selected>선택해주세요</option>
+      </select>
+    </fieldset>
+    <fieldset>
+      <label for="ice-cream-choice">잘 선택하세요</label>
+        <input
+          list="ice-cream_flavors"
+          id="ice-cream-choice"
+          name="ice-cream-choice"
+        />
+        <datalist id="ice-cream_flavors">
+          <option value="초코"></option>
+          <option value="딸기"></option>
+          <option value="바닐라"></option>
+        </datalist>
+    </fieldset>
+    <button type="submit">제출하기</button>
+    <button type="reset">reset</button>
+    <button type="button" onclick="alert('hi')">button</button>
+  </form>
+</body>
+</html>
