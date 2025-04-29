@@ -8,7 +8,7 @@ result = []
 
 for i in s:
     result.append(i)
-    if len(result) >= len(b) and result[-len(b) :] == b:
+    if result[-len(b) :] == b:
         for _ in range(len(b)):
             result.pop()
 

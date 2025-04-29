@@ -8,7 +8,7 @@ insertlist = deque()
 namelist = {}
 result = 0
 for _ in range(n):
-    # print(namelist, result)
+    print(namelist, result)
     name = input()
     insertlist.append(len(name))
     if len(name) in namelist:

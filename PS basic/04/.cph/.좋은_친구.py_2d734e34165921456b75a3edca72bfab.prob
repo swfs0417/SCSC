@@ -1,0 +1,1 @@
+{"name":"Local: 좋은_친구","url":"g:\\내 드라이브\\학교\\SCSC\\PS basic\\04\\좋은_친구.py","tests":[{"id":1744712203759,"input":"4 2\nIVA\nIVO\nANA\nTOM","output":"5\r\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"g:\\내 드라이브\\학교\\SCSC\\PS basic\\04\\좋은_친구.py","group":"local","local":true}
