@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .flex-container {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+      }
+      .flex-item {
+        background-color: skyblue;
+        width: 200px;
+        height: 200px;
+        border-radius: 20px;
+        display: flex;
+        justify-content: center; /* Added to center content */
+        align-items: center; /* Added to center content */
+        font-size: 24px; /* Added to increase font size */
+      }
+      .item1 {
+        flex-grow: 2;
+      }
+      .item3 {
+        flex-grow: 2;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex-container">
+      <div class="flex-item item1">1</div>
+      <div class="flex-item item2">2</div>
+      <div class="flex-item item3">3</div>
+    </div>
+  </body>
+</html>

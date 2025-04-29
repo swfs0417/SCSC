@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0; /* Added to remove default margin */
+        font-family: Arial, sans-serif; /* Added to set a default font */
+      }
+      .flex-container {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+        background-color: #333;
+      }
+
+      .flex-item {
+        padding: 10px;
+        width: 70px;
+        height: 50px;
+        font-size: 20px;
+        display: flex; /* Added to enable flex properties */
+        border-radius: 5px; /* Added to round the corners */
+        color: white;
+        justify-content: center;
+        align-items: center;
+      }
+      .logo {
+        flex-grow: 2;
+        font-weight: bold; /* Added to make the logo bold */
+        font-size: 20px; /* Added to increase the logo font size */
+      }
+      .flex-item:hover {
+        background-color: #777;
+        transition: all 0.5s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex-container">
+      <div class="flex-item logo">MyLogo</div>
+      <div class="flex-item">홈</div>
+      <div class="flex-item">소개</div>
+      <div class="flex-item">문의</div>
+    </div>
+  </body>
+</html>
