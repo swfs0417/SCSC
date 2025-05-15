@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <button onclick="showinfo()">Show Info</button>
+    <script>
+      let username = "김찬우";
+      let age = 24;
+      let person = {
+        username: username,
+        age: age,
+        greet: function () {
+          alert("안녕하세요");
+        },
+      };
+      function showinfo() {
+        alert("이름은 " + person.username + "이고, " + person.age + "살이야");
+        person.greet();
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <img src="ari.jpg" alt="" width="200px" />
+    <br />
+    <input type="text" id="foodInput" placeholder="음식주세용" />
+    <br />
+    <button onclick="pet.feed()">아리 밥주기</button>
+    <button onclick="pet.howmuchfeed()">아리 얼마나먹었는지 확인하기</button>
+    <script>
+      let pet = {
+        name: "아리",
+        age: 7,
+        type: "개",
+        breed: "토이푸들",
+        likes: ["핫바", "사료", "간식"],
+        eaten: 0,
+        feed: function () {
+          let food = document.querySelector("#foodInput").value;
+          if (this.eaten < 5) {
+            if (this.likes.includes(food)) {
+              this.eaten++;
+              alert("냠냠냠");
+            } else {
+              alert("으악!");
+            }
+          } else {
+            alert("꺼억");
+          }
+        },
+        howmuchfeed: function () {
+          alert("아리가 먹은 양: " + this.eaten + "개");
+        },
+      };
+    </script>
+  </body>
+</html>

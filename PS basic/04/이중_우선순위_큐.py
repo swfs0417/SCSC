@@ -6,21 +6,29 @@ input = lambda: sys.stdin.readline().rstrip()
 
 t = int(input())
 for _ in range(t):
-    hq = []
+    minhq = []
+    maxhq = []
+    l = 0
     k = int(input())
     for _ in range(k):
         cmd, n = input().split()
         n = int(n)
         if cmd == "I":
-            heapq.heappush(hq, n)
+            heapq.heappush(minhq, n)
+            heapq.heappush(maxhq, -n)
+            l += 1
         else:
-            if n == 1 and hq:
-                heapq._heapify_max(hq)
-                heapq.heappop(hq)
-            elif n == -1 and hq:
-                heapq.heapify(hq)
-                heapq.heappop(hq)
-    if len(hq) > 2:
-        print(max(hq), heapq.heappop(hq))
+            if n == 1 and maxhq:
+                heapq.heappop(maxhq)
+                l -= 1
+            elif n == -1 and minhq:
+                heapq.heappop(minhq)
+                l -= 1
+
+        if l == 0:
+            minhq, maxhq = [], []
+
+    if len(minhq) > 0:
+        print(-min(maxhq), min(minhq))
     else:
         print("EMPTY")

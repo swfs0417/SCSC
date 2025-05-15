@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>6주차 만들어보기</title>
+    <style>
+      .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 600px;
+        margin: auto;
+        margin-top: 50px;
+        background-color: antiquewhite;
+        padding: 20px;
+      }
+      .write {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin: auto;
+      }
+      .log-item {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 600px;
+        margin: 10px 0;
+      }
+      #content {
+        width: 400px;
+        height: 30px;
+        border: 1px solid black;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <div class="write">
+        <form action="#">
+          <input type="text" name="content" id="content" />
+          <button type="submit">작성하기</button>
+        </form>
+      </div>
+      <div class="list">
+        <div class="log">
+          <div class="log-item">
+            <div class="log-content">안녕하세요</div>
+            <button class="delete">삭제</button>
+          </div>
+          <div class="log-item">
+            <div class="log-content">반갑습니다</div>
+            <button class="delete">삭제</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const form = document.querySelector("form");
+      const content = document.querySelector("#content");
+      const log = document.querySelector(".log");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const newLogItem = document.createElement("div");
+        newLogItem.classList.add("log-item");
+        newLogItem.innerHTML = `
+          <div class="log-content">${content.value}</div>
+          <button class="delete">삭제</button>
+        `;
+        log.appendChild(newLogItem);
+        content.value = "";
+      });
+
+      log.addEventListener("click", (e) => {
+        if (e.target.classList.contains("delete")) {
+          e.target.parentElement.remove();
+        }
+      });
+    </script>
+  </body>
+</html>

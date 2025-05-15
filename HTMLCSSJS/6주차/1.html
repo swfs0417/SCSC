@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      .warn {
+        padding: 15px;
+        border: 1px solid #dba1b2;
+        border-radius: 4px;
+        color: #8a6671;
+        background-color: #f0d8df;
+      }
+    </style>
+    <script>
+      let warn = document.createElement("div");
+      warn.innerHTML = "<strong>오류가 발생했습니다.</strong>";
+      warn.setAttribute("class", "warn");
+      document.body.append(warn);
+    </script>
+  </body>
+</html>

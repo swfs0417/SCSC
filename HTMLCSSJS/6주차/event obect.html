@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ol id="l1">
+      <li>이벤트 객체</li>
+      <li>이벤트 객체는 이벤트가 발생한 요소에 대한 정보를 담고 있다.</li>
+      <li>이벤트 객체는 이벤트 핸들러의 매개변수로 전달된다.</li>
+      <li>이벤트 객체는 window, document, element 등에서 발생할 수 있다.</li>
+      <li>이벤트 객체는 이벤트의 종류에 따라 다르게 동작한다.</li>
+    </ol>
+    <script>
+      let selected;
+      l1.addEventListener("click", function (e) {
+        let target = e.target;
+        if (target.tagName !== "LI") {
+          return;
+        }
+        if (selected) {
+          selected.style.color = "";
+        }
+        selected = target;
+        selected.style.color = "red";
+      });
+    </script>
+  </body>
+</html>

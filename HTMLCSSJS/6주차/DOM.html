@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    body starts here
+    <ul>
+      1 is here
+      <li class="a">1-1</li>
+      <li class="a">1-2</li>
+    </ul>
+    <ul>
+      2 is here
+      <li>2-1</li>
+      <li>2-2</li>
+    </ul>
+    <!-- body ends here-->
+    <script>
+      for (let i of document.body.childNodes) {
+        console.log(i);
+      }
+    </script>
+  </body>
+</html>
