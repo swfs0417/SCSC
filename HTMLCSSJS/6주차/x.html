@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 600px;
+        margin: auto;
+        margin-top: 50px;
+        background-color: antiquewhite;
+        padding: 20px;
+      }
+      .write {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin: auto;
+      }
+      .log-item {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 600px;
+        margin: 10px 0;
+      }
+      #content {
+        width: 400px;
+        height: 30px;
+        border: 1px solid black;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <div class="write">
+        <form action="#">
+          <input type="text" name="content" id="content" />
+          <button type="submit">작성하기</button>
+        </form>
+      </div>
+      <div class="list">
+        <div class="log">
+          <div class="log-item">
+            <div class="log-content">안녕하세요</div>
+            <button class="delete">삭제</button>
+          </div>
+          <div class="log-item">
+            <div class="log-content">반갑습니다</div>
+            <button class="delete">삭제</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      let form = document.querySelector("form");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault(); // 기본 submit 동작 방지
+        let text = document.getElementById("content").value; // 입력값 가져오기
+        let log = document.createElement("div");
+        let logContent = document.createElement("div");
+        let logDelete = document.createElement("button");
+
+        log.className = "log-item";
+        logContent.className = "log-content";
+        logContent.innerHTML = text;
+        logDelete.className = "delete";
+        logDelete.innerHTML = "삭제";
+
+        log.append(logContent, logDelete);
+        document.querySelector(".list").append(log);
+      });
+
+      document.querySelector(".list").addEventListener("click", (e) => {
+        if (e.target.className === "delete") {
+          e.target.parentElement.remove();
+        }
+      });
+    </script>
+  </body>
+</html>
