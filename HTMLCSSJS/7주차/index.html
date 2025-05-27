@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        display: grid;
+        padding: 10px;
+        grid-template-columns: repeat(5, 41px);
+        grid-template-rows: repeat(5, 41px);
+        grid-gap: 5px;
+        justify-items: center;
+      }
+      .image {
+        border-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img src="" alt="" class="image image0" /><img
+        src=""
+        alt=""
+        class="image image1"
+      /><img src="" alt="" class="image image2" /><img
+        src=""
+        alt=""
+        class="image image3"
+      /><img src="" alt="" class="image image4" /><img
+        src=""
+        alt=""
+        class="image image5"
+      /><img src="" alt="" class="image image6" /><img
+        src=""
+        alt=""
+        class="image image7"
+      /><img src="" alt="" class="image image8" /><img
+        src=""
+        alt=""
+        class="image image9"
+      /><img src="" alt="" class="image image10" /><img
+        src=""
+        alt=""
+        class="image image11"
+      /><img src="" alt="" class="image image12" /><img
+        src=""
+        alt=""
+        class="image image13"
+      /><img src="" alt="" class="image image14" /><img
+        src=""
+        alt=""
+        class="image image15"
+      /><img src="" alt="" class="image image16" /><img
+        src=""
+        alt=""
+        class="image image17"
+      /><img src="" alt="" class="image image18" /><img
+        src=""
+        alt=""
+        class="image image19"
+      /><img src="" alt="" class="image image20" /><img
+        src=""
+        alt=""
+        class="image image21"
+      /><img src="" alt="" class="image image22" /><img
+        src=""
+        alt=""
+        class="image image23"
+      /><img src="" alt="" class="image image24" />
+    </div>
+    <p id="sum">sum:</p>
+    <p id="score">score:</p>
+    <script>
+      //define
+      let sum = 0;
+      let score = 0;
+      let apples = [];
+      let selected = [];
+      let removed = [];
+      let sumTxt = document.getElementById("sum");
+      let scoreTxt = document.getElementById("score");
+      let container = document.querySelector(".container");
+
+      //initiate
+      for (let i = 0; i < 25; i++) {
+        let img = document.querySelector(`.image${i}`);
+        let num = Math.floor(Math.random() * 9) + 1;
+        apples.push(num);
+        img.src = `./asset/${num}.png`;
+      }
+
+      // update text elements
+      function update() {
+        sumTxt.textContent = `sum: ${sum}`;
+        scoreTxt.textContent = `score: ${score}`;
+      }
+
+      container.addEventListener("click", (event) => {
+        // check real img
+        let target = event.target;
+        if (target.tagName !== "IMG") return;
+        let pos = target.classList[1].substring(5);
+        if (selected.includes(pos) || removed.includes(pos)) return;
+
+        // selection
+        selected.push(pos);
+        sum += apples[pos];
+        target.setAttribute("border", "1px");
+        update();
+
+        if (sum == 10) {
+          //checking 10 (add score)
+          for (let i of selected) {
+            i = document.querySelector(`.image${i}`);
+            i.setAttribute("border", "0px");
+            i.setAttribute("src", "");
+          }
+          removed += selected;
+          selected = [];
+          score += sum;
+          sum = 0;
+          update();
+        } else if (sum > 10) {
+          //checking over 10 (reset)
+          for (let i of selected) {
+            i = document.querySelector(`.image${i}`);
+            i.setAttribute("border", "0px");
+          }
+          selected = [];
+          sum = 0;
+          update();
+        }
+      });
+    </script>
+  </body>
+</html>
